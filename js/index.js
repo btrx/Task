@@ -1,5 +1,5 @@
 let today = new Date();
-let dateWithoutTime = today.toISOString().split('T')[0];
+let dateWithoutTime = moment(today).format("MM/DD/YYYY");
 
 document.getElementById("result-today").innerHTML = dateWithoutTime;
 
@@ -21,8 +21,10 @@ function showResult() {
     var capitalized = name.charAt(0).toUpperCase() + name.slice(1);
 
     var dobInput = document.getElementById("dob");
-    var dob = dobInput.value;
-    dob.setAttribute("placeholder", "dd/mm/yyyy");
+    var dob = "";
+    if (dobInput.value !== "") {
+        dob = moment(dobInput.value).format("MM/DD/YYYY");
+    }
 
     var genderInput = document.querySelector('input[name="gender"]:checked');
     var gender = genderInput ? genderInput.value : "";
@@ -75,6 +77,8 @@ function showResult() {
     }
     var msg = document.getElementById("msg").value;
     document.getElementById("result-msg").innerHTML = msg;
+
+    console.log(dob);
 }
 
 function addNameHero() {
