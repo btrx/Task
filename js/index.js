@@ -51,9 +51,14 @@ function showResult() {
     var genderMale = document.getElementById('male');
     var genderFemale = document.getElementById('female');
 
+    var msgInput = document.getElementById("msg");
+    var msg = msgInput.value;
+
     var nameWarning = document.getElementById("warning-name");
     var dobWarning = document.getElementById("warning-dob");
     var genderWarning = document.getElementById("warning-gender");
+    var msgWarning = document.getElementById("warning-msg");
+
 
     // Validate name
     if (name === "") {
@@ -84,8 +89,17 @@ function showResult() {
         genderFemale.classList.remove("invalid");
     }
 
+    // Validate message
+    if (msg === "") {
+        msgWarning.innerHTML = "Please select your gender";
+        msgInput.classList.add("invalid");
+    } else {
+        msgWarning.innerHTML = "";
+        msgInput.classList.remove("invalid");
+    }
+
     // Exit function if any validation fails
-    if (name === "" || dob === "" || gender === "") {
+    if (name === "" || dob === "" || gender === "" || msg === "") {
         return;
     }
 
@@ -94,7 +108,6 @@ function showResult() {
     if (gender) {
         document.getElementById("result-gender").innerHTML = gender;
     }
-    var msg = document.getElementById("msg").value;
     document.getElementById("result-msg").innerHTML = msg;
 
     console.log(dob);
