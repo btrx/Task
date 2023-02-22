@@ -170,13 +170,11 @@ textarea {
   padding-right: 30px;
 }
 
-.input-with-icon .calendar-icon {
+.calendar-icon {
   position: absolute;
   right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-  cursor: pointer;
+  top: 25%;
+  pointer-events: none;
 }
 
 .gender-selection {
@@ -231,5 +229,6 @@ textarea {
 }
 
 .invalid {
-  border: 1px solid red;
+  border: 1px solid red !important;
+  
 }

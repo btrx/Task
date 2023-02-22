@@ -15,30 +15,20 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 
-function addNameHero() {
-    var nameInput = document.getElementById("name");
-    var name = nameInput.value;
-    var capitalized = name.charAt(0).toUpperCase() + name.slice(1);
-
-    if (name === "") {
-        document.getElementById("title-name").innerHTML = "There";
-    } else {
-        document.getElementById("title-name").innerHTML = capitalized;
-    }
-}
-
-addNameHero();
-
-
-
 function showResult() {
     var nameInput = document.getElementById("name");
     var name = nameInput.value;
     var capitalized = name.charAt(0).toUpperCase() + name.slice(1);
-    var dobInput = document.getElementById("dob")
+
+    var dobInput = document.getElementById("dob");
     var dob = dobInput.value;
+    dob.setAttribute("placeholder", "dd/mm/yyyy");
+
     var genderInput = document.querySelector('input[name="gender"]:checked');
     var gender = genderInput ? genderInput.value : "";
+
+    var genderMale = document.getElementById('male');
+    var genderFemale = document.getElementById('female');
 
     var nameWarning = document.getElementById("warning-name");
     var dobWarning = document.getElementById("warning-dob");
@@ -65,8 +55,12 @@ function showResult() {
     // Validate gender
     if (gender === "") {
         genderWarning.innerHTML = "Please select your gender";
+        genderMale.classList.add("invalid");
+        genderFemale.classList.add("invalid");
     } else {
         genderWarning.innerHTML = "";
+        genderMale.classList.remove("invalid");
+        genderFemale.classList.remove("invalid");
     }
 
     // Exit function if any validation fails
@@ -74,7 +68,6 @@ function showResult() {
         return;
     }
 
-    document.getElementById("title-name").innerHTML = capitalized ? capitalized : "There";
     document.getElementById("result-name").innerHTML = capitalized;
     document.getElementById("result-dob").innerHTML = dob;
     if (gender) {
@@ -83,3 +76,17 @@ function showResult() {
     var msg = document.getElementById("msg").value;
     document.getElementById("result-msg").innerHTML = msg;
 }
+
+function addNameHero() {
+    var nameInput = document.getElementById("name");
+    var name = nameInput.value;
+    var capitalized = name.charAt(0).toUpperCase() + name.slice(1);
+
+    if (name === "") {
+        document.getElementById("title-name").innerHTML = "There";
+    } else {
+        document.getElementById("title-name").innerHTML = capitalized;
+    }
+}
+
+setInterval(addNameHero, 1000);
