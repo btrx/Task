@@ -15,6 +15,25 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 
+function openMenu(x) {
+    x.classList.toggle("change");
+    document.getElementById("dropdownContent").classList.toggle("show");
+}
+
+window.onclick = function (event, x) {
+    if (!event.target.matches('.menu-btn')) {
+        x.classList.toggle("change");
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
 function showResult() {
     var nameInput = document.getElementById("name");
     var name = nameInput.value;
@@ -79,6 +98,7 @@ function showResult() {
     document.getElementById("result-msg").innerHTML = msg;
 
     console.log(dob);
+    addNameHero();
 }
 
 function addNameHero() {
@@ -93,4 +113,4 @@ function addNameHero() {
     }
 }
 
-setInterval(addNameHero, 1000);
+addNameHero();
