@@ -1,4 +1,4 @@
-.nav {
+  .nav {
     display: flex;
     height: 75px;
     align-items: center;
@@ -200,3 +200,29 @@
   .nav-footer p {
     margin-right: 45px;
   }
+
+@media screen and (max-width: 600px) {
+    .group-btn {
+        display: none;
+    }
+    
+    .menu-btn {
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .menu-btn {
+      display: none;
+      cursor: pointer;
+      margin-right: 45px;
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    
+}
+  
+  @media screen and (min-width: 1200px) {
+    
+}

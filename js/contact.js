@@ -1,45 +1,3 @@
-let today = new Date();
-let dateWithoutTime = moment(today).format("MM/DD/YYYY");
-
-document.getElementById("result-today").innerHTML = dateWithoutTime;
-
-function updateClock() {
-    let now = new Date();
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-    let seconds = now.getSeconds();
-    let time = `${hours}:${minutes}:${seconds}`;
-
-    document.getElementById("result-time").textContent = time;
-}
-
-setInterval(updateClock, 1000);
-
-function openMenu(x) {
-    x.classList.toggle("change");
-    var dropdownContent = document.getElementById("dropdownContent");
-    dropdownContent.classList.toggle("show");
-    if (!dropdownContent.classList.contains("show")) {
-        document.dispatchEvent(new MouseEvent('click'));
-    }
-}
-
-window.onclick = function (event) {
-    if (!event.target.matches('.menu-btn') && !event.target.matches('.dropdown-content')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var buttons = document.getElementsByClassName("menu-btn");
-        for (var i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            var button = buttons[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-                button.classList.remove('change');
-            }
-        }
-    }
-}
-
-
 function showResult() {
     var nameInput = document.getElementById("name");
     var name = nameInput.value;
@@ -117,19 +75,4 @@ function showResult() {
     document.getElementById("result-msg").innerHTML = msg;
 
     console.log(dob);
-    addNameHero();
 }
-
-function addNameHero() {
-    var nameInput = document.getElementById("name");
-    var name = nameInput.value;
-    var capitalized = name.charAt(0).toUpperCase() + name.slice(1);
-
-    if (name === "") {
-        document.getElementById("title-name").innerHTML = "There";
-    } else {
-        document.getElementById("title-name").innerHTML = capitalized;
-    }
-}
-
-addNameHero();

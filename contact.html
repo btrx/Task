@@ -4,9 +4,104 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/reset.css">
     <title>First Website | Message Us</title>
 </head>
 <body>
-    
+    <header>
+        <section id="header">
+            <nav class="nav">
+                <img src="./assets/logo.png" alt="logo" class="logo">
+            
+                <div class="group-btn">
+                    <a href="./index.html">Home</a>
+                    <a href="./profile.html">Our Profile</a>
+                    <a href="./project.html">Portfolio</a>
+                    <a href="./contact.html" class="active">Message Us</a>
+                </div>
+
+                <div class="dropdown">
+                    <div class="menu-btn" onclick="openMenu(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                    <div id="dropdownContent" class="dropdown-content">
+                        <a href="./index.html">Home</a>
+                        <a href="./profile.html">Our Profile</a>
+                        <a href="./project.html">Portfolio</a>
+                        <a href="./contact.html" class="active">Message Us</a>
+                    </div>
+                </div>
+            </nav>
+        </section>
+    </header>
+
+    <main>
+        <section id="form">
+            <div class="form-container">
+                <div class="title">
+                    <h1>Message Us</h1>
+                </div>
+                <div class="forms">
+                    <form>
+                      <label for="name">Name:</label>
+                      <input type="text" id="name" class="input" name="name" value="" placeholder="Your name here">
+                      <span></span>
+                      <span id="warning-name"></span>
+                
+                      <label for="dob">Date of birth:</label>
+                      <div class="input-with-icon">
+                          <input type="date" id="dob" name="dob" value="" placeholder="dd/mm/yyyy">
+                          <span></span>
+                          <span id="warning-dob"></span>
+                          <span class="calendar-icon">&#x1F4C5;</span>
+                      </div>
+                
+                      <label for="gender">Gender:</label>
+                      <div id="gender" class="gender-selection">
+                          <input type="radio" id="male" name="gender" value="Male">
+                          <label for="male">Male</label>
+                          <input type="radio" id="female" name="gender" value="Female">
+                          <label for="female">Female</label>
+                      </div>
+                      <span></span>
+                      <span id="warning-gender"></span>
+
+                
+                      <label for="msg">Message:</label>
+                      <textarea id="msg" name="msg" placeholder="Enter your message here.."></textarea>
+                      <span></span>
+                      <span id="warning-msg"></span>  
+                    
+
+                      <input type="button" value="Submit" onclick="showResult()">
+                    </form>
+                    <div class="result">
+                        <div class="flex-col">
+                            <h3>Name: <span id="result-name"></span></h3>
+                            <h3>Date of birth: <span id="result-dob"></span></h3>
+                            <h3>Gender: <span id="result-gender"></span></h3>
+                            <h3>Message: <span id="result-msg"></span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>          
+    </main>
+
+
+    <footer>
+        <section id="footer">
+            <nav class="nav-footer">
+                <img src="./assets/logo.png" alt="logo" class="logo">
+                <p>&copy; 2023 RevoU. All rights reserved.</p>
+            </nav>
+        </section>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="./js/contact.js"></script>
 </body>
 </html>
