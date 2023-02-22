@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/reset.css">
-    <title>First Website</title>
+    <title>First Website | Home</title>
 </head>
 <body>
     <header>
@@ -16,10 +16,24 @@
                 <img src="./assets/logo.png" alt="logo" class="logo">
             
                 <div class="group-btn">
-                    <a href="#">Home</a>
-                    <a href="#">Our Profile</a>
+                    <a href="./index.html">Home</a>
+                    <a href="./profile.html">Our Profile</a>
                     <a href="#">Portfolio</a>
                     <a href="#">Message Us</a>
+                </div>
+
+                <div class="dropdown">
+                    <div class="menu-btn" onclick="openMenu(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                    <div id="dropdownContent" class="dropdown-content">
+                        <a href="#">Home</a>
+                        <a href="#">Our Profile</a>
+                        <a href="#">Portfolio</a>
+                        <a href="#">Message Us</a>
+                    </div>
                 </div>
             </nav>
         </section>
@@ -110,6 +124,14 @@
             </div>
         </section>          
     </main>
+    <footer>
+        <section id="footer">
+            <nav class="nav-footer">
+                <img src="./assets/logo.png" alt="logo" class="logo">
+                <p>&copy; 2023 RevoU. All rights reserved.</p>
+            </nav>
+        </section>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
