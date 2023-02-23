@@ -126,6 +126,10 @@
   height: 87vh;
 }
 
+.content {
+  position: relative;
+}
+
 .title {
   font-size: xx-large;
   margin: 10px 0px;
@@ -145,7 +149,7 @@
   position: absolute;
   height: 200px;
   width: 200px;
-  top: 15%;
+  top: 0px;
   border-radius: 100%;
   opacity: 0;
   transition: .5s ease;
@@ -308,6 +312,7 @@ textarea {
 /* Responsive */
 
 @media screen and (max-width: 600px) {
+
   .hero-container {
     height: 70vh;
   }
@@ -331,7 +336,7 @@ textarea {
   }
 
   .overlay {
-    top: initial;
+    z-index: 2;
   }
   
   .group-btn {
