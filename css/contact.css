@@ -75,7 +75,6 @@
 }
 
 .dropdown {
-  position: relative;
   display: inline-block;
 }
 
@@ -84,6 +83,7 @@
   position: absolute;
   background-color: #f1f1f1;
   width: 100%;
+  top: 103%;
   left: 0;
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -236,6 +236,10 @@ textarea {
 }
 
 @media screen and (max-width: 600px) {
+  .nav {
+    position: relative;
+  }
+
   .group-btn {
     display: none;
   }
