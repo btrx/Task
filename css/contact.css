@@ -106,7 +106,7 @@
 }
 
 .form-container {
-  margin: 50px 100px 0;
+  margin: 0 100px 50px;
   height: 70vh;
   display: flex;
   flex-direction: column;
@@ -116,6 +116,7 @@
 .title {
   text-align: center;
   margin-bottom: 30px;
+  font-size: xx-large;
 }
 
 .forms {

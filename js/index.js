@@ -15,6 +15,9 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 
+var nameHero = prompt("Would you tell us your name?");
+document.getElementById('title-name').innerText = nameHero;
+
 function openMenu(x) {
     x.classList.toggle("change");
     var dropdownContent = document.getElementById("dropdownContent");
@@ -97,7 +100,7 @@ function showResult() {
 
     // Validate message
     if (msg === "") {
-        msgWarning.innerHTML = "Please select your gender";
+        msgWarning.innerHTML = "Please fill out this field";
         msgInput.classList.add("invalid");
     } else {
         msgWarning.innerHTML = "";
@@ -115,21 +118,4 @@ function showResult() {
         document.getElementById("result-gender").innerHTML = gender;
     }
     document.getElementById("result-msg").innerHTML = msg;
-
-    console.log(dob);
-    addNameHero();
 }
-
-function addNameHero() {
-    var nameInput = document.getElementById("name");
-    var name = nameInput.value;
-    var capitalized = name.charAt(0).toUpperCase() + name.slice(1);
-
-    if (name === "") {
-        document.getElementById("title-name").innerHTML = "There";
-    } else {
-        document.getElementById("title-name").innerHTML = capitalized;
-    }
-}
-
-addNameHero();
