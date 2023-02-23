@@ -15,8 +15,17 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 
-var nameHero = prompt("Would you tell us your name?");
-document.getElementById('title-name').innerText = nameHero;
+var nameHeroInput = prompt("Would you tell us your name?");
+var nameHero;
+
+if (nameHeroInput === null || nameHeroInput.trim() === "") {
+    nameHero = "There";
+} else {
+    nameHero = nameHeroInput;
+}
+
+document.getElementById("title-name").innerHTML = nameHero;
+
 
 function openMenu(x) {
     x.classList.toggle("change");
